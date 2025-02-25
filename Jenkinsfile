@@ -3,9 +3,9 @@ pipeline {
     
     environment {
         // Define Docker Hub credentials ID
-        DOCKERHUB_CREDENTIALS_ID = 'amirdirin'
+        DOCKERHUB_CREDENTIALS_ID = 'alvade'
         // Define Docker Hub repository name
-        DOCKERHUB_REPO = 'amirdirin/fartocelkelvin'
+        DOCKERHUB_REPO = 'alvade/temperature-converter'
         // Define Docker image tag
         DOCKER_IMAGE_TAG = 'latest'
     }

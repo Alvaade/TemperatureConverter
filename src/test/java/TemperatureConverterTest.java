@@ -1,28 +1,39 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
+
 class TemperatureConverterTest {
+    private TemperatureConverter tempCon;
+
+    @BeforeEach
+    void setUp() {
+        tempCon = new TemperatureConverter();
+    }
 
     @Test
     void fahrenheitToCelsius() {
-        TemperatureConverter temperatureConverter = new TemperatureConverter();
-        assertEquals(0, temperatureConverter.fahrenheitToCelsius(32));
-        assertEquals(100, temperatureConverter.fahrenheitToCelsius(212));
+        assertEquals(0, tempCon.fahrenheitToCelsius(32));
+        assertEquals(100, tempCon.fahrenheitToCelsius(212));
     }
 
     @Test
     void celsiusToFahrenheit() {
-        TemperatureConverter temperatureConverter = new TemperatureConverter();
-        assertEquals(32, temperatureConverter.celsiusToFahrenheit(0));
-        assertEquals(212, temperatureConverter.celsiusToFahrenheit(100));
+        assertEquals(32, tempCon.celsiusToFahrenheit(0));
+        assertEquals(212, tempCon.celsiusToFahrenheit(100));
+    }
+
+    @Test
+    void kelvinToFahrenheit() {
+        assertEquals(-460, TemperatureConverter.kelvinToFahrenheit(0));
+        assertEquals(32, TemperatureConverter.kelvinToFahrenheit(273.15));
+        assertEquals(212, TemperatureConverter.kelvinToFahrenheit(373.15));
     }
 
     @Test
     void isExtremeTemperature() {
-        TemperatureConverter temperatureConverter = new TemperatureConverter();
-        assertTrue(temperatureConverter.isExtremeTemperature(-40));
-        assertTrue(temperatureConverter.isExtremeTemperature(50));
-        assertFalse(temperatureConverter.isExtremeTemperature(-39));
-        assertFalse(temperatureConverter.isExtremeTemperature(49));
+        assertTrue(tempCon.isExtremeTemperature(-40));
+        assertTrue(tempCon.isExtremeTemperature(50));
+        assertFalse(tempCon.isExtremeTemperature(-39));
+        assertFalse(tempCon.isExtremeTemperature(49));
     }
 }

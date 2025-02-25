@@ -2,7 +2,7 @@ pipeline {
     agent any // IN THE LECTURE I WILL EXPLAIN THE SCRIPT AND THE WORKFLOW
     
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('docker-hub-credentials')
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
         DOCKERHUB_REPO = 'alvade/temperature-converter'
         DOCKER_IMAGE_TAG = 'latest'
     }

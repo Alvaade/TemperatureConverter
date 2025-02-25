@@ -13,7 +13,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from Git repository
-                git 'https://github.com/Alvaade/TemperatureConverter.git'
+                git branch: 'main', url: 'https://github.com/Alvaade/TemperatureConverter.git'
             }
         }  
         stage('Build Docker Image') {
